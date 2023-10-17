@@ -1,0 +1,71 @@
+/*
+Theme Name: Кирпич сервис
+Author: Slava Khripushin
+Author URI: https://t.me/slav4x
+Version: 1.2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+.hidden {
+  display: none;
+}
+
+.item-delivery {
+  padding: 30px;
+  text-align: center;
+}
+.item-delivery__grid {
+  margin-top: 40px;
+}
+.item-delivery__title {
+  font-size: 24px;
+  font-weight: 500;
+}
+.item-delivery__text {
+  margin-top: 10px;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+.item-delivery .item-bottom {
+  margin-top: 30px;
+}
+
+.page-text ul {
+  list-style: disc;
+  padding-left: 17px;
+  margin-top: 20px;
+}
+
+@media (max-width: 475px) {
+  .item-banner {
+    background-position: top center !important;
+  }
+  .page-banner,
+  .page-banner img {
+    height: auto;
+  }
+}
+
+.column-price {
+  width: 10%;
+}
+.column-category {
+  width: 18%;
+}
+
+.page-banner__mob {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-banner__mob {
+    display: block;
+  }
+  .page-banner__pc {
+    display: none;
+  }
+  .page-banner__pc + .page-title-xl {
+    margin-top: 0;
+  }
+}
