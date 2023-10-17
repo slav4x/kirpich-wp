@@ -48,8 +48,17 @@
                   $shouldShowFilter = isset($field_data['show_filter']) && $field_data['show_filter'] === 'true';
                   $field_value = get_field($field_data['id']);
 
+                  $multiple = false;
+
+                  if (is_array($field_value)) {
+                    $val = implode(', ', $field_value);
+                    $multiple = true;
+                  } else {
+                    $val = $field_value;
+                  }
+
                   if ($shouldShowFilter && !empty($field_value)) {
-                    echo "<li><span>{$label}</span><span>{$field_value}</span></li>";
+                    echo "<li"; if($multiple) { echo ' class="multiple"'; } echo "><span>{$label}</span><span>{$val}</span></li>";
                   }
                 }
               ?>

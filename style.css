@@ -69,3 +69,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     margin-top: 0;
   }
 }
+
+.multiple {
+  align-items: flex-start !important;
+}
+.multiple::after {
+  bottom: initial !important;
+  top: 13px;
+}
+.multiple span:nth-child(2) {
+  max-width: calc(100% - 94px);
+  text-align: left;
+}

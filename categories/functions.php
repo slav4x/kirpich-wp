@@ -5,7 +5,12 @@
       foreach ($category_data['fields'] as $field_label => $field_data) {
         if (isset($field_data['show_filter']) && $field_data['show_filter'] === 'true') {
           $field_value = get_field($field_data['id']);
-          echo ' data-' . $field_data['key'] . '="' . $field_value . '"';
+          if (is_array($field_value)) {
+            $val = implode(', ', $field_value);
+          } else {
+            $val = $field_value;
+          }
+          echo ' data-' . $field_data['key'] . '="' . $val . '"';
         }
       }
     }

@@ -170,7 +170,18 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             } else {
               const itemValue = item.getAttribute(`data-${filter}`);
-              if (itemValue && !filterValues.includes(itemValue)) {
+              if (itemValue) {
+                const itemValuesArray = itemValue
+                  .split(",")
+                  .map((v) => v.trim());
+                const hasAnyValue = itemValuesArray.some((v) =>
+                  filterValues.includes(v)
+                );
+                if (!hasAnyValue) {
+                  shouldShow = false;
+                  break;
+                }
+              } else {
                 shouldShow = false;
                 break;
               }
