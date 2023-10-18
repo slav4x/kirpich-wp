@@ -13,9 +13,9 @@
       <img src="<?php echo get_template_directory_uri(); ?>/img/svg/filter.svg" alt="">
       <p>Фильтр товаров</p>
     </a>
-    <a href="javascript:;" data-fancybox data-src="#popup-smeta" data-form="Заказать расчет" class="navbar-item">
+    <a href="javascript:;" data-fancybox data-src="#popup-smeta" data-form="Получить расчет" class="navbar-item">
       <img src="<?php echo get_template_directory_uri(); ?>/img/svg/calc.svg" alt="">
-      <p>Заказать<br> расчет</p>
+      <p>Получить<br> расчет</p>
     </a>
     <a href="javascript:;" data-fancybox data-src="#popup" data-form="Заказать звонок" class="navbar-item">
       <img src="<?php echo get_template_directory_uri(); ?>/img/svg/phone.svg" alt="">
@@ -29,13 +29,20 @@
 
   <div class="popup" id="popup-smeta">
     <h3>Получите коммерческое предложение на поставку продукции от ТД Кирпич Сервис</h3>
-    <form method="post" action="<?php echo admin_url( 'admin-post.php' ); ?>">
-      <input type="text" name="name" class="input" placeholder="Ваше имя" />
+    <form method="post" action="<?php echo admin_url( 'admin-post.php' ); ?>" enctype="multipart/form-data">
+      <select class="input" name="face">
+        <option value="Физическое лицо">Физическое лицо</option>
+        <option value="Юридическое лицо">Юридическое лицо</option>
+      </select>
       <input type="tel" name="phone" class="input masked" placeholder="Введите номер телефона" required />
-      <input type="email" name="email" class="input" placeholder="Введите e-mail" required />
+      <input type="email" name="email" class="input" placeholder="Введите e-mail" />
       <input type="text" name="company" class="input" placeholder="Название компании" />
       <input type="text" name="inn" class="input" placeholder="ИНН" />
       <input type="text" name="comment" class="input" placeholder="Комментарий" />
+      <label class="file">
+        <input type="file" name="userfile[]" multiple="">
+        <p>Прикрепить файл</p>
+      </label>
       <input type="hidden" name="form_name" value="" />
       <input type="hidden" name="action" value="save_form_data">
       <button class="btn">Заказать расчет сметы</button>
@@ -51,6 +58,18 @@
 		<input type="hidden" name="form_name" value="" />
 		<input type="hidden" name="action" value="save_form_data">
 		<button class="btn">Оставить заявку</button>
+		<small>Нажимая на кнопку, вы соглашаетесь с Пользовательским соглашением</small>
+	  </form>
+	</div>
+
+  <div class="popup" id="popup-showroom">
+	  <h3>Чтобы вы могли посетить шоу-рум, необходимо оформить пропуск для вас</h3>
+	  <form method="post" action="<?php echo admin_url( 'admin-post.php' ); ?>">
+		<input type="text" name="name" class="input" placeholder="Ваше имя" />
+		<input type="tel" name="phone" class="input masked" placeholder="Введите номер телефона" required />
+		<input type="hidden" name="form_name" value="" />
+		<input type="hidden" name="action" value="save_form_data">
+		<button class="btn">Записаться в шоу-рум</button>
 		<small>Нажимая на кнопку, вы соглашаетесь с Пользовательским соглашением</small>
 	  </form>
 	</div>

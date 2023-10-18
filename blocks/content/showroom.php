@@ -18,6 +18,6 @@
       <li>Индивидуальная работа с проектом, аудит сметы</li>
       <li>Скидка по предварительной записи</li>
     </ul>
-    <a href="javascript:;" data-fancybox data-src="#popup" data-form="Посетить шоурум" class="btn">Записаться в шоу-рум</a>
+    <a href="javascript:;" data-fancybox data-src="#popup-showroom" data-form="Посетить шоурум" class="btn">Записаться в шоу-рум</a>
   </div>
 </div>

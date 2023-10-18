@@ -41,7 +41,7 @@
   </ul>
   <div class="item-row">
     <div class="item-price"><b><?php the_field('price'); ?></b> ₽</div>
-    <a href="javascript:;" data-fancybox data-src="#popup-smeta" data-form="Заказать расчет - <?php echo $title; ?>" class="item-online">Заказать расчет</a>
+    <a href="javascript:;" data-fancybox data-src="#popup-smeta" data-form="Получить оптовый прайс - <?php echo $title; ?>" class="item-online">Получить оптовый прайс</a>
   </div>
   <div class="item-bottom">
     <div class="item-count">
