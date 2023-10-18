@@ -21,6 +21,17 @@
 
   $unit = 'шт.';
   if (get_field('m3')) $unit = 'м<sup>3</sup>';
+
+  function get_page_link_by_title($page_title) {
+    if ($page_title === 'Облицовочный кирпич') $page_title = 'Облицовочный лицевой кирпич';
+    if ($page_title === 'Строительный кирпич') $page_title = 'Строительный рядовой кирпич';
+
+    $page = get_page_by_title($page_title);
+
+    if ($page) {
+      return get_permalink($page->ID);
+    }
+  }
 ?>
 
 <section class="page">
@@ -30,6 +41,7 @@
         <ul class="breadcrumbs">
           <li><a href="/">Главная</a></li>
           <li><a href="/catalog">Каталог</a></li>
+          <li><a href="<?php echo get_page_link_by_title($category); ?>"><?php echo $category; ?></a></li>
           <li><a href="<?php echo get_page_link(); ?>"><?php the_title(); ?></a></li>
         </ul>
         <div class="card js-shop" data-id="<?php the_ID(); ?>">
