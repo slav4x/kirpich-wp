@@ -34,7 +34,16 @@
         </ul>
         <div class="card js-shop" data-id="<?php the_ID(); ?>">
           <h2 class="page-title"><?php the_title(); ?></h2>
-          <div class="card-image"><img src="<?php echo esc_attr($image['sizes']['medium_large']); ?>" alt="<?php the_title(); ?>" loading="lazy" style="max-height: 300px;"></div>
+          <div class="card-image">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="<?php echo esc_attr($image['sizes']['medium_large']); ?>" alt="<?php the_title(); ?>" loading="lazy"></div>
+              <?php $gallery = get_field('gallery'); if( $gallery ): foreach( $gallery as $item ): ?>
+                <div class="swiper-slide"><img src="<?php echo esc_attr($item['sizes']['medium_large']); ?>" alt="<?php the_title(); ?>" loading="lazy"></div>
+              <?php endforeach; endif; ?>
+            </div>
+            <div class="card-arrow card-arrow__prev"></div>
+            <div class="card-arrow card-arrow__next"></div>
+          </div>
           <div class="card-info">
             <div class="item-badge">Первая цена от производителя</div>
             <ul class="item-list">
