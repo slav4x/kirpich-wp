@@ -58,7 +58,11 @@
                   }
 
                   if ($shouldShowFilter && !empty($field_value)) {
-                    echo "<li"; if($multiple) { echo ' class="multiple"'; } echo "><span>{$label}</span><span>{$val}</span></li>";
+                    if ($multiple) {
+                      echo "<li class='multiple'><span>{$label}</span><span><p>{$val}</p></span></li>";
+                    } else {
+                      echo "<li><span>{$label}</span><span>{$val}</span></li>";
+                    }
                   }
                 }
               ?>
@@ -83,27 +87,25 @@
             </div>
           </div>
         </div>
-        <?php if (isset($categories[$category]) && hasHiddenFields($categories[$category])) { ?>
-        <div class="item-spec">
-          <h2 class="page-title">Характеристики</h2>
-          <ul class="item-list">
-          <?php
-            if (!isset($categories[$category]['fields'])) {
-              return;
-            }
-
-            foreach ($categories[$category]['fields'] as $label => $field_data) {
-              $shouldShowFilter = isset($field_data['show_filter']) && $field_data['show_filter'] === 'false';
-              $field_value = get_field($field_data['id']);
-
-              if ($shouldShowFilter && !empty($field_value)) {
-                echo "<li><span>{$label}</span><span>{$field_value}</span></li>";
-              }
-            }
-          ?>
-          </ul>
+        <div class="content">
+          <div class="content-grid">
+            <div class="content-main">
+              <?php include 'blocks/content/spec.php'; ?>
+              <?php include 'blocks/content/advantages.php'; ?>
+              <div class="content-block content-block-mobile">
+                <?php include 'blocks/content/form.php'; ?>
+              </div>
+              <?php include 'blocks/content/best.php'; ?>
+              <?php include 'blocks/content/special.php'; ?>
+            </div>
+            <div class="content-sidebar">
+              <div class="content-block content-block-md">
+              <?php include 'blocks/content/form.php'; ?>
+              </div>
+            </div>
+          </div>
+          <?php include 'blocks/content/showroom.php'; ?>
         </div>
-        <?php } ?>
         <h2 class="page-title">Похожие товары</h2>
         <div class="item-grid item-grid-4"><?php include 'blocks/similar.php'; ?></div>
       </div>

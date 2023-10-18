@@ -29,6 +29,29 @@
   </div>
 </section>
 
+<section class="content-section">
+  <div class="container">
+    <div class="content">
+      <div class="content-grid">
+        <div class="content-main">
+          <?php include 'blocks/content/advantages.php'; ?>
+          <div class="content-block content-block-mobile">
+            <?php include 'blocks/content/form.php'; ?>
+          </div>
+          <?php include 'blocks/content/best.php'; ?>
+          <?php include 'blocks/content/special.php'; ?>
+        </div>
+        <div class="content-sidebar">
+          <div class="content-block content-block-md">
+          <?php include 'blocks/content/form.php'; ?>
+          </div>
+        </div>
+      </div>
+      <?php include 'blocks/content/showroom.php'; ?>
+    </div>
+  </div>
+</section>
+
 <section class="page">
   <div class="container">
     <div class="page-grid">

@@ -62,6 +62,7 @@
       <a href="/" class="header-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/logo.svg" alt=""></a>
       <ul class="header-nav">
         <li><a href="/o-kompanii">О компании</a></li>
+        <li><a href="/showroom">Шоу-рум</a></li>
         <li><a href="/dostavka-i-oplata">Доставка и оплата</a></li>
         <li><a href="/kontakty">Контакты</a></li>
       </ul>
@@ -76,12 +77,6 @@
           <a href="javascript:;" data-fancybox data-src="#popup" data-form="Заказать звонок">
             <img src="<?php echo get_template_directory_uri(); ?>/img/svg/phone.svg" alt="">
             <p>Заказать<br> звонок</p>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" data-fancybox data-src="#popup" data-form="Посетить шоурум">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/svg/pin.svg" alt="">
-            <p>Посетить<br> шоу-рум</p>
           </a>
         </li>
         <li>

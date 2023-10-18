@@ -21,7 +21,7 @@
       <img src="<?php echo get_template_directory_uri(); ?>/img/svg/phone.svg" alt="">
       <p>Заказать<br> звонок</p>
     </a>
-    <a href="/kontakty" class="navbar-item">
+    <a href="/showroom" class="navbar-item">
       <img src="<?php echo get_template_directory_uri(); ?>/img/svg/pin.svg" alt="">
       <p>Посетить<br> шоу-рум</p>
     </a>
